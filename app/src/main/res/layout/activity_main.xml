@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.appsbydmk.datasecure.activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_app_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/views_margin_horizontal"
+            android:layout_marginEnd="@dimen/views_margin_vertical"
+            android:layout_marginStart="@dimen/views_margin_vertical"
+            android:layout_marginTop="@dimen/views_margin_horizontal"
+            android:background="@drawable/rectangle_border"
+            android:gravity="center"
+            android:paddingBottom="@dimen/views_padding_horizontal"
+            android:paddingEnd="@dimen/views_padding_vertical"
+            android:paddingStart="@dimen/views_padding_vertical"
+            android:paddingTop="@dimen/views_padding_horizontal"
+            android:text="@string/text_app_desc"
+            android:textSize="@dimen/text_size_app_desc" />
+
+        <Button
+            android:id="@+id/btn_save_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/views_margin_horizontal"
+            android:layout_marginEnd="@dimen/views_margin_vertical"
+            android:layout_marginStart="@dimen/views_margin_vertical"
+            android:layout_marginTop="@dimen/views_margin_horizontal"
+            android:background="@color/colorPrimary"
+            android:onClick="startInfoScreen"
+            android:text="@string/text_btn_save_profile"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_view_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/views_margin_horizontal"
+            android:layout_marginEnd="@dimen/views_margin_vertical"
+            android:layout_marginStart="@dimen/views_margin_vertical"
+            android:layout_marginTop="@dimen/views_margin_horizontal"
+            android:background="@color/colorPrimary"
+            android:onClick="startProfileLoginScreen"
+            android:text="@string/text_btn_show_profile"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:src="@android:drawable/ic_dialog_info"
+        app:fabSize="normal"
+        android:onClick="displayAbout"/>
+
+</android.support.design.widget.CoordinatorLayout>

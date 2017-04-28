@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.appsbydmk.datasecure.activities.ProfileActivity"
+    android:weightSum="1">
+
+    <ScrollView
+        android:id="@+id/sv_profile_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_profile_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/views_margin_horizontal"
+            android:layout_marginEnd="@dimen/views_margin_vertical"
+            android:layout_marginStart="@dimen/views_margin_vertical"
+            android:layout_marginTop="@dimen/views_margin_horizontal"
+            android:paddingBottom="@dimen/views_padding_horizontal"
+            android:paddingEnd="@dimen/views_padding_vertical"
+            android:paddingStart="@dimen/views_padding_vertical"
+            android:paddingTop="@dimen/views_padding_horizontal" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:background="@color/colorPrimary"
+        android:text="@string/text_btn_logout"
+        android:textAllCaps="false" />
+</RelativeLayout>

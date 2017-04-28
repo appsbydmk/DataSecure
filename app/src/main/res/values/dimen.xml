@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="views_margin_horizontal">10dp</dimen>
+    <dimen name="views_margin_vertical">10dp</dimen>
+    <dimen name="text_size_app_desc">20sp</dimen>
+    <dimen name="views_padding_horizontal">10dp</dimen>
+    <dimen name="views_padding_vertical">10dp</dimen>
+    <dimen name="text_size_first_use">20sp</dimen>
+    <dimen name="text_size_app_title">30sp</dimen>
+</resources>

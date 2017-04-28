@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DataSecure</string>
+    <string name="text_btn_save_profile">Save Profile Information</string>
+    <string name="text_btn_show_profile">Show Profile Information</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="text_app_desc">DataSecure provides you secure storage of your personal, financial, insurance, household, web connectivity information and more.</string>
+    <string name="hint_password_again">Password Again</string>
+    <string name="text_btn_save">Save</string>
+    <string name="text_first_time_use">You are starting this app for the first time. Please create a username and password to use this app securely.</string>
+    <string name="title_user_details">Enter new user details</string>
+    <string name="title_profile_login">Login</string>
+    <string name="title_info">Save Information</string>
+    <string name="text_btn_login">Login</string>
+    <string name="title_about">About</string>
+    <string name="text_brief_app_desc">DataSecure is a secure vault for your personal information.</string>
+    <string name="created_by">Created by Darshan Kamble</string>
+    <string name="text_btn_logout">Logout</string>
+    <string name="title_profile_page">Your Profile</string>
+    <string name="btn_ok">OK</string>
+    <string name="text_version">Version : 1.0</string>
+</resources>
