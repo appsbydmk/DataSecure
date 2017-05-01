@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.dialogs.AboutDialog;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayAbout(View v) {
-        Intent aboutIntent = new Intent(this, AboutAppActivity.class);
-        this.startActivity(aboutIntent);
+        //Intent aboutIntent = new Intent(this, AboutAppActivity.class);
+        //this.startActivity(aboutIntent);
+        AboutDialog aboutDialog = new AboutDialog(this);
+        aboutDialog.show();
     }
 }

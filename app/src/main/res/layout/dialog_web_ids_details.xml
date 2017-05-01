@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <EditText
+        android:id="@+id/et_secondary_email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:hint="@string/hint_secondary_email" />
+
+    <EditText
+        android:id="@+id/et_twitter_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_secondary_email_id"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:hint="@string/hint_twitter_id" />
+
+    <EditText
+        android:id="@+id/et_facebook_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_twitter_id"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:hint="@string/hint_facebook_id" />
+
+    <EditText
+        android:id="@+id/et_snapchat_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_facebook_id"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:hint="@string/hint_snapchat_id" />
+
+    <EditText
+        android:id="@+id/et_instagram_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_snapchat_id"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:hint="@string/hint_instagram_id" />
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_instagram_id"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/views_margin_horizontal"
+            android:layout_marginEnd="@dimen/views_margin_vertical"
+            android:layout_marginStart="@dimen/views_margin_vertical"
+            android:layout_marginTop="@dimen/views_margin_horizontal"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/save"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/views_margin_horizontal"
+            android:layout_marginEnd="@dimen/views_margin_vertical"
+            android:layout_marginStart="@dimen/views_margin_vertical"
+            android:layout_marginTop="@dimen/views_margin_horizontal"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/cancel"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</RelativeLayout>

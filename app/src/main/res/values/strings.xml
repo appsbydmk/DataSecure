@@ -19,4 +19,38 @@
     <string name="title_profile_page">Your Profile</string>
     <string name="btn_ok">OK</string>
     <string name="text_version">Version : 1.0</string>
+    <string-array name="save_info_items">
+        <item>Personal Details</item>
+        <item>Financial Details</item>
+        <item>Web Identification Details</item>
+        <item>Insurance Details</item>
+        <item>Vehicle Details</item>
+    </string-array>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_dob">Date of Birth</string>
+    <string name="hint_aadhar_no">Aadhar Card No.</string>
+    <string name="hint_primary_email">Primary Email Address</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="hint_bank_name">Bank Name</string>
+    <string name="hint_bank_branch_name">Branch Name</string>
+    <string name="hint_bank_acc_no">Account No</string>
+    <string name="text_bank_acc_type">Account Type</string>
+    <string-array name="bank_acc_types">
+        <item>Savings Account</item>
+        <item>Current Account</item>
+        <item>Fixed Deposit Account</item>
+        <item>Recurring Deposit Account</item>
+    </string-array>
+    <string name="hint_secondary_email">Secondary Email Address</string>
+    <string name="hint_twitter_id">Twitter ID</string>
+    <string name="hint_facebook_id">Facebook ID</string>
+    <string name="hint_snapchat_id">Snapchat ID</string>
+    <string name="hint_instagram_id">Instagram ID</string>
+    <string name="hint_insurance_name">Insurance Policy Name</string>
+    <string name="hint_insurance_provider">Insurance Provider</string>
+    <string name="hint_insurance_expiry_date">Insurance Expiry Date</string>
+    <string name="hint_insurance_premium">Insurance Premium Amount</string>
 </resources>
