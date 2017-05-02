@@ -12,7 +12,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_name" />
+        android:hint="@string/hint_insurance_name"
+        android:textColorHint="@color/textColorHint" />
 
     <EditText
         android:id="@+id/et_insurance_provider"
@@ -23,7 +24,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_provider" />
+        android:hint="@string/hint_insurance_provider"
+        android:textColorHint="@color/textColorHint" />
 
     <EditText
         android:id="@+id/et_insurance_expiry_date"
@@ -34,7 +36,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_expiry_date" />
+        android:hint="@string/hint_insurance_expiry_date"
+        android:textColorHint="@color/textColorHint" />
 
     <EditText
         android:id="@+id/et_insurance_premium_amt"
@@ -45,7 +48,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_premium" />
+        android:hint="@string/hint_insurance_premium"
+        android:textColorHint="@color/textColorHint" />
 
     <LinearLayout
         android:id="@+id/btn_layout"

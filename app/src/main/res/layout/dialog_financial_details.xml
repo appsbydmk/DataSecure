@@ -12,7 +12,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_bank_name" />
+        android:hint="@string/hint_bank_name"
+        android:textColorHint="@color/textColorHint" />
 
     <EditText
         android:id="@+id/et_bank_branch_name"
@@ -23,7 +24,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_bank_branch_name" />
+        android:hint="@string/hint_bank_branch_name"
+        android:textColorHint="@color/textColorHint" />
 
     <EditText
         android:id="@+id/et_bank_acc_no"
@@ -34,7 +36,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_bank_acc_no" />
+        android:hint="@string/hint_bank_acc_no"
+        android:textColorHint="@color/textColorHint" />
 
     <Spinner
         android:id="@+id/sp_bank_acc_type"

@@ -1,7 +1,7 @@
 package com.appsbydmk.datasecure.dialogs;
 
-import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.KeyboardShortcutGroup;
@@ -14,11 +14,11 @@ import com.appsbydmk.datasecure.R;
 import java.util.List;
 
 public class PersonalDetailsDialog extends Dialog implements View.OnClickListener {
-    private Activity pdActivity;
+    private Context myContext;
 
-    public PersonalDetailsDialog(Activity activity) {
-        super(activity);
-        this.pdActivity = activity;
+    public PersonalDetailsDialog(Context context) {
+        super(context);
+        this.myContext = context;
     }
 
     @Override

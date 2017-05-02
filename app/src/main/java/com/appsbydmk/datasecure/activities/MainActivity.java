@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayAbout(View v) {
-        //Intent aboutIntent = new Intent(this, AboutAppActivity.class);
-        //this.startActivity(aboutIntent);
         AboutDialog aboutDialog = new AboutDialog(this);
         aboutDialog.show();
     }

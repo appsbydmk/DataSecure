@@ -5,69 +5,81 @@
     android:background="@color/colorBackground">
 
     <EditText
-        android:id="@+id/et_secondary_email_id"
+        android:id="@+id/et_school_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/views_margin_horizontal"
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_secondary_email"
+        android:hint="@string/hint_school_name"
         android:textColorHint="@color/textColorHint" />
 
     <EditText
-        android:id="@+id/et_twitter_id"
+        android:id="@+id/et_10th_marks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_secondary_email_id"
+        android:layout_below="@id/et_school_name"
         android:layout_marginBottom="@dimen/views_margin_horizontal"
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_twitter_id"
+        android:hint="@string/hint_10th_marks"
         android:textColorHint="@color/textColorHint" />
 
     <EditText
-        android:id="@+id/et_facebook_id"
+        android:id="@+id/et_junior_college"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_twitter_id"
+        android:layout_below="@id/et_10th_marks"
         android:layout_marginBottom="@dimen/views_margin_horizontal"
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_facebook_id"
+        android:hint="@string/hint_junior_college"
         android:textColorHint="@color/textColorHint" />
 
     <EditText
-        android:id="@+id/et_snapchat_id"
+        android:id="@+id/et_12th_diploma_marks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_facebook_id"
+        android:layout_below="@id/et_junior_college"
         android:layout_marginBottom="@dimen/views_margin_horizontal"
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_snapchat_id"
+        android:hint="@string/hint_12th_diploma_marks"
         android:textColorHint="@color/textColorHint" />
 
     <EditText
-        android:id="@+id/et_instagram_id"
+        android:id="@+id/et_grad_college"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_snapchat_id"
+        android:layout_below="@id/et_12th_diploma_marks"
         android:layout_marginBottom="@dimen/views_margin_horizontal"
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_instagram_id"
+        android:hint="@string/hint_grad_college"
+        android:textColorHint="@color/textColorHint" />
+
+    <EditText
+        android:id="@+id/et_grad_marks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_grad_college"
+        android:layout_marginBottom="@dimen/views_margin_horizontal"
+        android:layout_marginEnd="@dimen/views_margin_vertical"
+        android:layout_marginStart="@dimen/views_margin_vertical"
+        android:layout_marginTop="@dimen/views_margin_horizontal"
+        android:hint="@string/hint_grad_marks"
         android:textColorHint="@color/textColorHint" />
 
     <LinearLayout
         android:id="@+id/btn_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_instagram_id"
+        android:layout_below="@id/et_grad_marks"
         android:layout_marginBottom="@dimen/views_margin_horizontal"
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"

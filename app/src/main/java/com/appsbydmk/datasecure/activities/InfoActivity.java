@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.dialogs.EducationalDetailsDialog;
 import com.appsbydmk.datasecure.dialogs.FinancialDetailsDialog;
 import com.appsbydmk.datasecure.dialogs.InsuranceDetailsDialog;
 import com.appsbydmk.datasecure.dialogs.PersonalDetailsDialog;
@@ -48,6 +49,10 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             case 3:
                 InsuranceDetailsDialog insuranceDetailsDialog = new InsuranceDetailsDialog(this);
                 insuranceDetailsDialog.show();
+                break;
+            case 4:
+                EducationalDetailsDialog educationalDetailsDialog = new EducationalDetailsDialog(this);
+                educationalDetailsDialog.show();
                 break;
             default:
                 break;

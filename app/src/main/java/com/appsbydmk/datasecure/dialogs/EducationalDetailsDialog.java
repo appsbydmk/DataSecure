@@ -8,19 +8,17 @@ import android.view.KeyboardShortcutGroup;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 
 import com.appsbydmk.datasecure.R;
 
 import java.util.List;
 
-public class AboutDialog extends Dialog implements View.OnClickListener {
+
+public class EducationalDetailsDialog extends Dialog implements View.OnClickListener {
 
     private Context myContext;
-    private Dialog dialog;
-    private Button btnOk;
 
-    public AboutDialog(Context context) {
+    public EducationalDetailsDialog(Context context) {
         super(context);
         this.myContext = context;
     }
@@ -29,20 +27,12 @@ public class AboutDialog extends Dialog implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.dialog_about);
-        btnOk = (Button) this.findViewById(R.id.btn_ok);
-        btnOk.setOnClickListener(this);
+        setContentView(R.layout.dialog_educational_details);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_ok:
-                dismiss();
-                break;
-            default:
-                break;
-        }
+
     }
 
     @Override

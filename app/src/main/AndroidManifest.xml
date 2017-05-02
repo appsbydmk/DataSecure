@@ -37,10 +37,6 @@
         <activity
             android:name=".activities.ProfileActivity"
             android:label="@string/title_profile_page" />
-        <activity
-            android:name=".activities.AboutAppActivity"
-            android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

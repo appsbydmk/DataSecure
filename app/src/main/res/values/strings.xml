@@ -24,7 +24,7 @@
         <item>Financial Details</item>
         <item>Web Identification Details</item>
         <item>Insurance Details</item>
-        <item>Vehicle Details</item>
+        <item>Educational Details</item>
     </string-array>
     <string name="hint_full_name">Full Name</string>
     <string name="hint_dob">Date of Birth</string>
@@ -53,4 +53,10 @@
     <string name="hint_insurance_provider">Insurance Provider</string>
     <string name="hint_insurance_expiry_date">Insurance Expiry Date</string>
     <string name="hint_insurance_premium">Insurance Premium Amount</string>
+    <string name="hint_school_name">School Name</string>
+    <string name="hint_junior_college">Junior College or Diploma College</string>
+    <string name="hint_grad_college">Graduation College</string>
+    <string name="hint_10th_marks">Class 10th Marks</string>
+    <string name="hint_12th_diploma_marks">Class 12th or Diploma Marks</string>
+    <string name="hint_grad_marks">Graduation Marks</string>
 </resources>
