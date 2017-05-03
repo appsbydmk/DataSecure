@@ -18,4 +18,10 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="DialogTheme">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+    </style>
 </resources>

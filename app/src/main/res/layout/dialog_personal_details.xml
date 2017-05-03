@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/colorBackground">
+    android:theme="@style/DialogTheme">
 
     <EditText
         android:id="@+id/et_full_name"
@@ -12,8 +12,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_full_name"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_full_name" />
 
     <EditText
         android:id="@+id/et_dob"
@@ -24,8 +23,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_dob"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_dob" />
 
     <RadioGroup
         android:id="@+id/rg_gender"
@@ -42,14 +40,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/male"
-            android:textColor="@color/textColorHint" />
+            android:textColor="@color/textColorPrimary" />
 
         <RadioButton
             android:id="@+id/rb_female"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/female"
-            android:textColor="@color/textColorHint" />
+            android:textColor="@color/textColorPrimary" />
     </RadioGroup>
 
     <EditText
@@ -62,8 +60,7 @@
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
         android:hint="@string/hint_aadhar_no"
-        android:inputType="number"
-        android:textColorHint="@color/textColorHint" />
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/et_primary_email_id"
@@ -75,8 +72,7 @@
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
         android:hint="@string/hint_primary_email"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/textColorHint" />
+        android:inputType="textEmailAddress" />
 
     <LinearLayout
         android:id="@+id/btn_layout"
@@ -89,6 +85,7 @@
         android:layout_marginTop="@dimen/views_margin_horizontal">
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"
@@ -101,6 +98,7 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"

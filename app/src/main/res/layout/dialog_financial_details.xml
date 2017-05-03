@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:theme="@style/DialogTheme">
 
     <EditText
         android:id="@+id/et_bank_name"
@@ -12,8 +12,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_bank_name"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_bank_name" />
 
     <EditText
         android:id="@+id/et_bank_branch_name"
@@ -24,8 +23,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_bank_branch_name"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_bank_branch_name" />
 
     <EditText
         android:id="@+id/et_bank_acc_no"
@@ -36,8 +34,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_bank_acc_no"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_bank_acc_no" />
 
     <Spinner
         android:id="@+id/sp_bank_acc_type"

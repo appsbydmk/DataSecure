@@ -3,18 +3,30 @@ package com.appsbydmk.datasecure.dialogs;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.view.KeyboardShortcutGroup;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.UserInformationHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PersonalDetailsDialog extends Dialog implements View.OnClickListener {
     private Context myContext;
+    private Button btnOk, btnCancel;
+    private EditText etFullName, etDob, etAadharNo, etPrimaryEmail;
+    private RadioGroup rgGender;
+    private String gender;
 
     public PersonalDetailsDialog(Context context) {
         super(context);
@@ -26,15 +38,52 @@ public class PersonalDetailsDialog extends Dialog implements View.OnClickListene
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_personal_details);
+        btnOk = (Button) this.findViewById(R.id.btn_save);
+        btnCancel = (Button) this.findViewById(R.id.btn_cancel);
+        etFullName = (EditText) this.findViewById(R.id.et_full_name);
+        etDob = (EditText) this.findViewById(R.id.et_dob);
+        etAadharNo = (EditText) this.findViewById(R.id.et_aadhar_no);
+        etPrimaryEmail = (EditText) this.findViewById(R.id.et_primary_email_id);
+        rgGender = (RadioGroup) this.findViewById(R.id.rg_gender);
+        rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                RadioButton radioButton = (RadioButton) findViewById(checkedId);
+                gender = radioButton.getText().toString();
+            }
+        });
+        btnOk.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.btn_save:
+                this.setPersonalDetails();
+                Toast.makeText(myContext, "Personal Details Saved!", Toast.LENGTH_SHORT).show();
+                dismiss();
+                break;
+            case R.id.btn_cancel:
+                dismiss();
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
     public void onProvideKeyboardShortcuts(List<KeyboardShortcutGroup> data, @Nullable Menu menu, int deviceId) {
 
+    }
+
+    private void setPersonalDetails() {
+        ArrayList<String> personalDetails = new ArrayList<>();
+        personalDetails.add("Full name: " + etFullName.getText().toString());
+        personalDetails.add("Date of Birth: " + etDob.getText().toString());
+        personalDetails.add("Gender: " + gender);
+        personalDetails.add("Aadhar Card No: " + etAadharNo.getText().toString());
+        personalDetails.add("Primary Email Address: " + etPrimaryEmail.getText().toString());
+        UserInformationHelper.writePersonalDetails(myContext, personalDetails);
     }
 }

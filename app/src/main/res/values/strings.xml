@@ -27,7 +27,7 @@
         <item>Educational Details</item>
     </string-array>
     <string name="hint_full_name">Full Name</string>
-    <string name="hint_dob">Date of Birth</string>
+    <string name="hint_dob">dd/mm/yyyy</string>
     <string name="hint_aadhar_no">Aadhar Card No.</string>
     <string name="hint_primary_email">Primary Email Address</string>
     <string name="male">Male</string>

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:theme="@style/DialogTheme">
 
     <EditText
         android:id="@+id/et_school_name"
@@ -12,8 +12,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_school_name"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_school_name" />
 
     <EditText
         android:id="@+id/et_10th_marks"
@@ -24,8 +23,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_10th_marks"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_10th_marks" />
 
     <EditText
         android:id="@+id/et_junior_college"
@@ -36,8 +34,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_junior_college"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_junior_college" />
 
     <EditText
         android:id="@+id/et_12th_diploma_marks"
@@ -48,8 +45,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_12th_diploma_marks"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_12th_diploma_marks" />
 
     <EditText
         android:id="@+id/et_grad_college"
@@ -60,8 +56,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_grad_college"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_grad_college" />
 
     <EditText
         android:id="@+id/et_grad_marks"
@@ -72,8 +67,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_grad_marks"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_grad_marks" />
 
     <LinearLayout
         android:id="@+id/btn_layout"

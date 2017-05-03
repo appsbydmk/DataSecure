@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:theme="@style/DialogTheme">
 
     <EditText
         android:id="@+id/et_insurance_name"
@@ -12,8 +12,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_name"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_insurance_name" />
 
     <EditText
         android:id="@+id/et_insurance_provider"
@@ -24,8 +23,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_provider"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_insurance_provider" />
 
     <EditText
         android:id="@+id/et_insurance_expiry_date"
@@ -36,8 +34,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_expiry_date"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_insurance_expiry_date" />
 
     <EditText
         android:id="@+id/et_insurance_premium_amt"
@@ -48,8 +45,7 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_premium"
-        android:textColorHint="@color/textColorHint" />
+        android:hint="@string/hint_insurance_premium" />
 
     <LinearLayout
         android:id="@+id/btn_layout"
