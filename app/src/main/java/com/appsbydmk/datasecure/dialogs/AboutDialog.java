@@ -17,7 +17,6 @@ import java.util.List;
 public class AboutDialog extends Dialog implements View.OnClickListener {
 
     private Context myContext;
-    private Dialog dialog;
     private Button btnOk;
 
     public AboutDialog(Context context) {
