@@ -34,7 +34,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_bank_acc_no" />
+        android:hint="@string/hint_bank_acc_no"
+        android:inputType="number" />
 
     <Spinner
         android:id="@+id/sp_bank_acc_type"
@@ -57,6 +58,7 @@
         android:layout_marginTop="@dimen/views_margin_horizontal">
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"
@@ -69,6 +71,7 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"

@@ -69,6 +69,7 @@
         android:layout_marginTop="@dimen/views_margin_horizontal">
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"
@@ -81,6 +82,7 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"

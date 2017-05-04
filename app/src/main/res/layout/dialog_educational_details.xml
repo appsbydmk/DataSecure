@@ -23,7 +23,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_10th_marks" />
+        android:hint="@string/hint_10th_marks"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/et_junior_college"
@@ -45,7 +46,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_12th_diploma_marks" />
+        android:hint="@string/hint_12th_diploma_marks"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/et_grad_college"
@@ -67,7 +69,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_grad_marks" />
+        android:hint="@string/hint_grad_marks"
+        android:inputType="numberDecimal" />
 
     <LinearLayout
         android:id="@+id/btn_layout"
@@ -80,6 +83,7 @@
         android:layout_marginTop="@dimen/views_margin_horizontal">
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"
@@ -92,6 +96,7 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"

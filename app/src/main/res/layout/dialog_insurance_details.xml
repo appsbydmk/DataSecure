@@ -45,7 +45,8 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_insurance_premium" />
+        android:hint="@string/hint_insurance_premium"
+        android:inputType="numberDecimal" />
 
     <LinearLayout
         android:id="@+id/btn_layout"
@@ -58,6 +59,7 @@
         android:layout_marginTop="@dimen/views_margin_horizontal">
 
         <Button
+            android:id="@+id/btn_save"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"
@@ -70,6 +72,7 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/btn_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/views_margin_horizontal"

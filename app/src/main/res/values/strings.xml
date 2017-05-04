@@ -51,7 +51,7 @@
     <string name="hint_instagram_id">Instagram ID</string>
     <string name="hint_insurance_name">Insurance Policy Name</string>
     <string name="hint_insurance_provider">Insurance Provider</string>
-    <string name="hint_insurance_expiry_date">Insurance Expiry Date</string>
+    <string name="hint_insurance_expiry_date">dd/mm/yyyy</string>
     <string name="hint_insurance_premium">Insurance Premium Amount</string>
     <string name="hint_school_name">School Name</string>
     <string name="hint_junior_college">Junior College or Diploma College</string>
