@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.EncryptDecryptUtility;
+import com.appsbydmk.datasecure.helpers.HelperConstants;
 import com.appsbydmk.datasecure.helpers.UserInformationHelper;
 
 import java.util.ArrayList;
@@ -54,6 +56,7 @@ public class EducationalDetailsDialog extends Dialog implements View.OnClickList
         switch (v.getId()) {
             case R.id.btn_save:
                 this.writeEducationDetails();
+                EncryptDecryptUtility.encrypt(myContext, HelperConstants.EDUCATION_DETAILS_FILE);
                 Toast.makeText(myContext, "Education Details Saved!", Toast.LENGTH_SHORT).show();
                 dismiss();
                 break;
@@ -78,12 +81,24 @@ public class EducationalDetailsDialog extends Dialog implements View.OnClickList
         String diploma12thMarks = et12thDiplomaMarks.getText().toString();
         String gradCollege = etGradCollegeName.getText().toString();
         String graduationMarks = etGraduationMarks.getText().toString();
-        educationDetails.add("School Name: " + schoolName);
-        educationDetails.add("10th Marks: " + tenthMarks);
-        educationDetails.add("Junior College Name: " + juniorCollegeName);
-        educationDetails.add("12th or Diploma Marks: " + diploma12thMarks);
-        educationDetails.add("Graduation College:" + gradCollege);
-        educationDetails.add("Graduation Marks: " + graduationMarks);
+        if (!schoolName.equals("") && !schoolName.isEmpty()) {
+            educationDetails.add("School Name: " + schoolName);
+        }
+        if (!tenthMarks.equals("") && !tenthMarks.isEmpty()) {
+            educationDetails.add("10th Marks: " + tenthMarks);
+        }
+        if (!juniorCollegeName.equals("") && !juniorCollegeName.isEmpty()) {
+            educationDetails.add("Junior College Name: " + juniorCollegeName);
+        }
+        if (!diploma12thMarks.equals("") && !diploma12thMarks.isEmpty()) {
+            educationDetails.add("12th or Diploma Marks: " + diploma12thMarks);
+        }
+        if (!gradCollege.equals("") && !gradCollege.isEmpty()) {
+            educationDetails.add("Graduation College:" + gradCollege);
+        }
+        if (!graduationMarks.equals("") && !graduationMarks.isEmpty()) {
+            educationDetails.add("Graduation Marks: " + graduationMarks);
+        }
         UserInformationHelper.writeEducationalDetails(myContext, educationDetails);
     }
 }

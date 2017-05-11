@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.HelperConstants;
 import com.appsbydmk.datasecure.helpers.UserDetailsFileHelper;
 
 import java.util.ArrayList;
@@ -28,12 +29,12 @@ public class ProfileLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent profileIntent;
-                userDetailsFileHelper = new UserDetailsFileHelper(ProfileLoginActivity.this);
-                userDetails = userDetailsFileHelper.getUserDetails();
+                userDetails = UserDetailsFileHelper.getUserDetails(ProfileLoginActivity.this);
                 if (userDetails.get(0).toString().equals(etUsername.getText().toString())
                         && userDetails.get(1).toString().equals(etPassword.getText().toString())) {
                     profileIntent = new Intent(ProfileLoginActivity.this, ProfileActivity.class);
-                    ProfileLoginActivity.this.startActivity(profileIntent);
+                    ProfileLoginActivity.this.startActivityForResult(profileIntent,
+                            HelperConstants.PROFILE_LOGOUT_CODE);
                 }
             }
         });
@@ -43,5 +44,16 @@ public class ProfileLoginActivity extends AppCompatActivity {
         etUsername = (EditText) this.findViewById(R.id.et_uname_login);
         etPassword = (EditText) this.findViewById(R.id.et_pwd_login);
         btnUserLogin = (Button) this.findViewById(R.id.btn_login);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == HelperConstants.PROFILE_LOGOUT_CODE) {
+            Intent mainIntent = new Intent(this, MainActivity.class);
+            mainIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            this.startActivity(mainIntent);
+            this.finish();
+        }
     }
 }

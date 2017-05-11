@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.appsbydmk.datasecure.activities.ProfileActivity"
-    android:weightSum="1">
+    android:weightSum="1"
+    tools:context="com.appsbydmk.datasecure.activities.ProfileActivity">
 
     <ScrollView
         android:id="@+id/sv_profile_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_logout"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:id="@+id/tv_profile_info"
@@ -23,7 +25,9 @@
             android:paddingBottom="@dimen/views_padding_horizontal"
             android:paddingEnd="@dimen/views_padding_vertical"
             android:paddingStart="@dimen/views_padding_vertical"
-            android:paddingTop="@dimen/views_padding_horizontal" />
+            android:paddingTop="@dimen/views_padding_horizontal"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/text_size_profile" />
     </ScrollView>
 
     <Button

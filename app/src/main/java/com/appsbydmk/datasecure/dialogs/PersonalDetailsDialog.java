@@ -16,6 +16,8 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.EncryptDecryptUtility;
+import com.appsbydmk.datasecure.helpers.HelperConstants;
 import com.appsbydmk.datasecure.helpers.UserInformationHelper;
 
 import java.util.ArrayList;
@@ -38,6 +40,7 @@ public class PersonalDetailsDialog extends Dialog implements View.OnClickListene
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_personal_details);
+        Toast.makeText(myContext, myContext.getFilesDir().toString(), Toast.LENGTH_SHORT).show();
         btnOk = (Button) this.findViewById(R.id.btn_save);
         btnCancel = (Button) this.findViewById(R.id.btn_cancel);
         etFullName = (EditText) this.findViewById(R.id.et_full_name);
@@ -61,6 +64,7 @@ public class PersonalDetailsDialog extends Dialog implements View.OnClickListene
         switch (v.getId()) {
             case R.id.btn_save:
                 this.setPersonalDetails();
+                EncryptDecryptUtility.encrypt(myContext, HelperConstants.PERSONAL_DETAILS_FILE);
                 Toast.makeText(myContext, "Personal Details Saved!", Toast.LENGTH_SHORT).show();
                 dismiss();
                 break;

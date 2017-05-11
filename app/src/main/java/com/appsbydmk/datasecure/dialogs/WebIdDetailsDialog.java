@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.EncryptDecryptUtility;
+import com.appsbydmk.datasecure.helpers.HelperConstants;
 import com.appsbydmk.datasecure.helpers.UserInformationHelper;
 
 import java.util.ArrayList;
@@ -49,6 +51,7 @@ public class WebIdDetailsDialog extends Dialog implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_save:
                 this.writeWebDetails();
+                EncryptDecryptUtility.encrypt(myContext, HelperConstants.WEB_DETAILS_FILE);
                 Toast.makeText(myContext, "Web Details Saved!", Toast.LENGTH_SHORT).show();
                 dismiss();
                 break;

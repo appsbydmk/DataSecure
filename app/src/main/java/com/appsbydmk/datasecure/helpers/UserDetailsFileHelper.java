@@ -4,23 +4,22 @@ import android.content.Context;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class UserDetailsFileHelper {
-    Context context;
 
-    public UserDetailsFileHelper(Context context) {
-        this.context = context;
-    }
-
-    public boolean writeUserDetails(String username, String password) {
+    public static boolean writeUserDetails(Context context, String username, String password) {
+        File dataDir = context.getFilesDir();
+        File userDetails = new File(dataDir + "/" + HelperConstants.USER_DETAILS_FILE);
         BufferedWriter userDetailsWriter = null;
         try {
-            userDetailsWriter = new BufferedWriter(new OutputStreamWriter
-                    (context.openFileOutput(HelperConstants.USER_DETAILS_FILE, Context.MODE_PRIVATE)));
+            userDetailsWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(userDetails)));
             userDetailsWriter.write(username);
             userDetailsWriter.write("\n");
             userDetailsWriter.write(password);
@@ -39,16 +38,17 @@ public class UserDetailsFileHelper {
         return false;
     }
 
-    public ArrayList<String> getUserDetails() {
-        ArrayList<String> userDetails = new ArrayList<>();
+    public static ArrayList<String> getUserDetails(Context context) {
+        File dataDir = context.getFilesDir();
+        File userDetails = new File(dataDir + HelperConstants.USER_DETAILS_FILE);
+        ArrayList<String> userDetailsList = new ArrayList<>();
+        String text;
         BufferedReader userDetailsReader = null;
-        String line;
         try {
-            userDetailsReader = new BufferedReader(new InputStreamReader(context.openFileInput
-                    (HelperConstants.USER_DETAILS_FILE)));
-            while ((line = userDetailsReader.readLine()) != null)
-                userDetails.add(line);
-
+            userDetailsReader = new BufferedReader(new InputStreamReader(new FileInputStream(userDetails)));
+            while ((text = userDetailsReader.readLine()) != null) {
+                userDetailsList.add(text);
+            }
         } catch (IOException ex) {
             ex.printStackTrace();
         } finally {
@@ -59,6 +59,6 @@ public class UserDetailsFileHelper {
                 ex.printStackTrace();
             }
         }
-        return userDetails;
+        return userDetailsList;
     }
 }

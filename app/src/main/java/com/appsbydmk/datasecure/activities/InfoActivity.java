@@ -35,7 +35,7 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                PersonalDetailsDialog personalDetailsDialog = new PersonalDetailsDialog(this);
+                PersonalDetailsDialog personalDetailsDialog = new PersonalDetailsDialog(InfoActivity.this);
                 personalDetailsDialog.show();
                 break;
             case 1:

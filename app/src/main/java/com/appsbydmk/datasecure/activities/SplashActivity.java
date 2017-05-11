@@ -14,7 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.appsbydmk.datasecure.helpers.EncryptDecryptUtility;
 import com.appsbydmk.datasecure.helpers.HelperConstants;
+
+import java.io.File;
 
 public class SplashActivity extends AppCompatActivity {
     Intent homeIntent;
@@ -31,6 +34,10 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     protected void proceedAfterPermissions() {
+        File dataDir = this.getFilesDir();
+        File keyFile = new File(dataDir + "/" + HelperConstants.KEY_FILE);
+        if (!keyFile.exists())
+            EncryptDecryptUtility.generateKey(this);
         SharedPreferences firstLaunch = getSharedPreferences(HelperConstants.FIRST_LAUNCH, MODE_PRIVATE);
         if (firstLaunch.getBoolean("first_launch", true)) {
             Log.d("Comments", "First Launch");

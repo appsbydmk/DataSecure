@@ -15,7 +15,8 @@
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
         android:hint="@string/hint_username"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/textColorHint" />
 
     <EditText
         android:id="@+id/et_pwd_login"
@@ -26,7 +27,8 @@
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
         android:hint="@string/hint_password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColorHint="@color/textColorHint" />
 
     <Button
         android:id="@+id/btn_login"

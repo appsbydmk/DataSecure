@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.EncryptDecryptUtility;
+import com.appsbydmk.datasecure.helpers.HelperConstants;
 import com.appsbydmk.datasecure.helpers.UserInformationHelper;
 
 import java.util.ArrayList;
@@ -49,6 +51,7 @@ public class InsuranceDetailsDialog extends Dialog implements View.OnClickListen
         switch (v.getId()) {
             case R.id.btn_save:
                 this.writeInsuranceDetails();
+                EncryptDecryptUtility.encrypt(myContext, HelperConstants.INSURANCE_DETAILS_FILE);
                 Toast.makeText(myContext, "Insurance Details Saved!", Toast.LENGTH_SHORT).show();
                 dismiss();
                 break;

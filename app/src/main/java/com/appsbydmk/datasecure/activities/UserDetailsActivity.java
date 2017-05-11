@@ -14,7 +14,6 @@ public class UserDetailsActivity extends AppCompatActivity {
     private EditText etUsername, etPassword, etPasswordAgain;
     private Button btnSaveUserDetails;
     private String userName, password, passwordAgain;
-    private UserDetailsFileHelper userDetailsFileHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +25,7 @@ public class UserDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 UserDetailsActivity.this.getUserDetails();
                 if (validateUserDetails(userName, password, passwordAgain)) {
-                    userDetailsFileHelper = new UserDetailsFileHelper(UserDetailsActivity.this);
-                    if (userDetailsFileHelper.writeUserDetails(userName, password)) {
+                    if (UserDetailsFileHelper.writeUserDetails(UserDetailsActivity.this, userName, password)) {
                         setResult(HelperConstants.USER_DETAILS_STATUS_CODE);
                         UserDetailsActivity.this.finish();
                     }

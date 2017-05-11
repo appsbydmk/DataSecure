@@ -11,4 +11,7 @@ public class HelperConstants {
     public static final String WEB_DETAILS_FILE = "web_details.dat";
     public static final String INSURANCE_DETAILS_FILE = "Insurance_details.dat";
     public static final String EDUCATION_DETAILS_FILE = "educational_details.dat";
+    public static final String KEY_FILE = "/key_file.key";
+    public static final String ALGORITHM = "DES";
+    public static final int PROFILE_LOGOUT_CODE = 401;
 }

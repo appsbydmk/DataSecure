@@ -3,6 +3,8 @@ package com.appsbydmk.datasecure.helpers;
 import android.content.Context;
 
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
@@ -10,10 +12,12 @@ import java.util.ArrayList;
 public class UserInformationHelper {
 
     public static void writePersonalDetails(Context context, ArrayList<String> personalInfo) {
+        File dataDir = context.getFilesDir();
+        File pdFile = new File(dataDir + "/" + HelperConstants.PERSONAL_DETAILS_FILE);
         BufferedWriter personalDetailWriter = null;
         try {
             personalDetailWriter = new BufferedWriter(new OutputStreamWriter
-                    (context.openFileOutput(HelperConstants.PERSONAL_DETAILS_FILE, Context.MODE_PRIVATE)));
+                    (new FileOutputStream(pdFile)));
             for (String p : personalInfo) {
                 personalDetailWriter.write(p + "\n");
             }
@@ -31,10 +35,12 @@ public class UserInformationHelper {
     }
 
     public static void writeEducationalDetails(Context context, ArrayList<String> educationDetails) {
+        File dataDir = context.getFilesDir();
+        File edFile = new File(dataDir + "/" + HelperConstants.EDUCATION_DETAILS_FILE);
         BufferedWriter educationWriter = null;
         try {
             educationWriter = new BufferedWriter(new OutputStreamWriter
-                    (context.openFileOutput(HelperConstants.EDUCATION_DETAILS_FILE, Context.MODE_PRIVATE)));
+                    (new FileOutputStream(edFile)));
             for (String p : educationDetails) {
                 educationWriter.write(p + "\n");
             }
@@ -52,10 +58,12 @@ public class UserInformationHelper {
     }
 
     public static void writeFinancialDetails(Context context, ArrayList<String> financialDetails) {
+        File dataDir = context.getFilesDir();
+        File fdFile = new File(dataDir + "/" + HelperConstants.FINANCIAL_DETAILS_FILE);
         BufferedWriter financialDetailsWriter = null;
         try {
             financialDetailsWriter = new BufferedWriter(new OutputStreamWriter
-                    (context.openFileOutput(HelperConstants.FINANCIAL_DETAILS_FILE, Context.MODE_PRIVATE)));
+                    (new FileOutputStream(fdFile)));
             for (String p : financialDetails) {
                 financialDetailsWriter.write(p + "\n");
             }
@@ -73,10 +81,12 @@ public class UserInformationHelper {
     }
 
     public static void writeInsuranceDetails(Context context, ArrayList<String> insuranceDetails) {
+        File dataDir = context.getFilesDir();
+        File idFile = new File(dataDir + "/" + HelperConstants.INSURANCE_DETAILS_FILE);
         BufferedWriter insuranceDetailsWriter = null;
         try {
             insuranceDetailsWriter = new BufferedWriter(new OutputStreamWriter
-                    (context.openFileOutput(HelperConstants.INSURANCE_DETAILS_FILE, Context.MODE_PRIVATE)));
+                    (new FileOutputStream(idFile)));
             for (String p : insuranceDetails) {
                 insuranceDetailsWriter.write(p + "\n");
             }
@@ -94,10 +104,12 @@ public class UserInformationHelper {
     }
 
     public static void writeWebDetails(Context context, ArrayList<String> webDetails) {
+        File dataDir = context.getFilesDir();
+        File wdFile = new File(dataDir + "/" + HelperConstants.WEB_DETAILS_FILE);
         BufferedWriter webDetailsWriter = null;
         try {
             webDetailsWriter = new BufferedWriter(new OutputStreamWriter
-                    (context.openFileOutput(HelperConstants.WEB_DETAILS_FILE, Context.MODE_PRIVATE)));
+                    (new FileOutputStream(wdFile)));
             for (String p : webDetails) {
                 webDetailsWriter.write(p + "\n");
             }

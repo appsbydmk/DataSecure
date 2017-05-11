@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.EncryptDecryptUtility;
+import com.appsbydmk.datasecure.helpers.HelperConstants;
 import com.appsbydmk.datasecure.helpers.UserInformationHelper;
 
 import java.util.ArrayList;
@@ -58,6 +60,7 @@ public class FinancialDetailsDialog extends Dialog implements View.OnClickListen
         switch (v.getId()) {
             case R.id.btn_save:
                 this.writeFinancialDetails();
+                EncryptDecryptUtility.encrypt(myContext, HelperConstants.FINANCIAL_DETAILS_FILE);
                 Toast.makeText(myContext, "Financial Details Saved!", Toast.LENGTH_SHORT).show();
                 dismiss();
                 break;
