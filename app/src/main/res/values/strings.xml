@@ -25,6 +25,7 @@
         <item>Web Identification Details</item>
         <item>Insurance Details</item>
         <item>Educational Details</item>
+        <item>Login Details</item>
     </string-array>
     <string name="hint_full_name">Full Name</string>
     <string name="hint_dob">dd/mm/yyyy</string>

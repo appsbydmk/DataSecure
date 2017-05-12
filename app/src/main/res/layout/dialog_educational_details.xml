@@ -12,7 +12,9 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_school_name" />
+        android:hint="@string/hint_school_name"
+        android:inputType="text"
+        android:maxLines="1" />
 
     <EditText
         android:id="@+id/et_10th_marks"
@@ -24,7 +26,8 @@
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
         android:hint="@string/hint_10th_marks"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:maxLines="1" />
 
     <EditText
         android:id="@+id/et_junior_college"
@@ -35,7 +38,9 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_junior_college" />
+        android:hint="@string/hint_junior_college"
+        android:inputType="text"
+        android:maxLines="1" />
 
     <EditText
         android:id="@+id/et_12th_diploma_marks"
@@ -47,7 +52,8 @@
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
         android:hint="@string/hint_12th_diploma_marks"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:maxLines="1" />
 
     <EditText
         android:id="@+id/et_grad_college"
@@ -58,7 +64,9 @@
         android:layout_marginEnd="@dimen/views_margin_vertical"
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
-        android:hint="@string/hint_grad_college" />
+        android:hint="@string/hint_grad_college"
+        android:inputType="text"
+        android:maxLines="1" />
 
     <EditText
         android:id="@+id/et_grad_marks"
@@ -70,7 +78,8 @@
         android:layout_marginStart="@dimen/views_margin_vertical"
         android:layout_marginTop="@dimen/views_margin_horizontal"
         android:hint="@string/hint_grad_marks"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:maxLines="1" />
 
     <LinearLayout
         android:id="@+id/btn_layout"

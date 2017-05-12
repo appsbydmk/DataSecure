@@ -13,6 +13,7 @@ import com.appsbydmk.datasecure.helpers.HelperConstants;
 public class ProfileActivity extends AppCompatActivity {
     private TextView tvProfileInfo;
     private Button btnLogout;
+    private String finalString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +26,17 @@ public class ProfileActivity extends AppCompatActivity {
         String educationalDetails = EncryptDecryptUtility.decrypt(this, "encrypted_" + HelperConstants.EDUCATION_DETAILS_FILE);
         String insuranceDetails = EncryptDecryptUtility.decrypt(this, "encrypted_" + HelperConstants.INSURANCE_DETAILS_FILE);
         String webDetails = EncryptDecryptUtility.decrypt(this, "encrypted_" + HelperConstants.WEB_DETAILS_FILE);
-        String finalString = personalDetails + "\n"
-                + financialDetails + "\n"
-                + educationalDetails + "\n"
-                + insuranceDetails + "\n"
-                + webDetails;
-
+        if (personalDetails.length() > 1)
+            finalString += personalDetails + "\n";
+        if (financialDetails.length() > 1)
+            finalString += financialDetails + "\n";
+        if (educationalDetails.length() > 1)
+            finalString += educationalDetails + "\n";
+        if (insuranceDetails.length() > 1)
+            finalString += insuranceDetails + "\n";
+        if (webDetails.length() > 1) {
+            finalString += webDetails + "\n";
+        }
         tvProfileInfo.setText(finalString);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override

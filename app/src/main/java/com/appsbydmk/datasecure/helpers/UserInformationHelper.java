@@ -19,7 +19,8 @@ public class UserInformationHelper {
             personalDetailWriter = new BufferedWriter(new OutputStreamWriter
                     (new FileOutputStream(pdFile)));
             for (String p : personalInfo) {
-                personalDetailWriter.write(p + "\n");
+                if (!p.equals(""))
+                    personalDetailWriter.write(p + "\n");
             }
             personalDetailWriter.flush();
         } catch (IOException ex) {
@@ -42,7 +43,8 @@ public class UserInformationHelper {
             educationWriter = new BufferedWriter(new OutputStreamWriter
                     (new FileOutputStream(edFile)));
             for (String p : educationDetails) {
-                educationWriter.write(p + "\n");
+                if (!p.equals(""))
+                    educationWriter.write(p + "\n");
             }
             educationWriter.flush();
         } catch (IOException ex) {
@@ -65,7 +67,8 @@ public class UserInformationHelper {
             financialDetailsWriter = new BufferedWriter(new OutputStreamWriter
                     (new FileOutputStream(fdFile)));
             for (String p : financialDetails) {
-                financialDetailsWriter.write(p + "\n");
+                if (!p.equals(""))
+                    financialDetailsWriter.write(p + "\n");
             }
             financialDetailsWriter.flush();
         } catch (IOException ex) {
@@ -88,7 +91,8 @@ public class UserInformationHelper {
             insuranceDetailsWriter = new BufferedWriter(new OutputStreamWriter
                     (new FileOutputStream(idFile)));
             for (String p : insuranceDetails) {
-                insuranceDetailsWriter.write(p + "\n");
+                if (!p.equals(""))
+                    insuranceDetailsWriter.write(p + "\n");
             }
             insuranceDetailsWriter.flush();
         } catch (IOException ex) {
@@ -111,7 +115,8 @@ public class UserInformationHelper {
             webDetailsWriter = new BufferedWriter(new OutputStreamWriter
                     (new FileOutputStream(wdFile)));
             for (String p : webDetails) {
-                webDetailsWriter.write(p + "\n");
+                if (!p.equals(""))
+                    webDetailsWriter.write(p + "\n");
             }
             webDetailsWriter.flush();
         } catch (IOException ex) {

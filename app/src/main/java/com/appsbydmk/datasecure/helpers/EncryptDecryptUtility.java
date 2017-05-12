@@ -10,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
@@ -62,12 +63,22 @@ public class EncryptDecryptUtility {
                 cipher.init(Cipher.ENCRYPT_MODE, secretKey);
                 fileIS = new FileInputStream(srcFile);
                 fileOS = new FileOutputStream(targetFile);
-                byte[] inputBytes = new byte[(int) srcFile.length()];
+                /*byte[] inputBytes = new byte[(int) srcFile.length()];
                 cOS = new CipherOutputStream(fileOS, cipher);
                 fileIS.read(inputBytes);
                 String s = new String(inputBytes, "UTF-8");
                 inputBytes = s.getBytes("UTF-8");
-                cOS.write(inputBytes);
+                cOS.write(inputBytes);*/
+                byte[] inputBytes = new byte[10];
+                int charRead;
+                cOS = new CipherOutputStream(fileOS, cipher);
+                while ((charRead = fileIS.read(inputBytes)) > 0) {
+                    byte[] input2Bytes = Arrays.copyOf(inputBytes, charRead);
+                    String s = new String(input2Bytes, "UTF-8");
+                    input2Bytes = s.getBytes("UTF-8");
+                    cOS.write(input2Bytes);
+                    inputBytes = new byte[10];
+                }
                 cOS.flush();
                 srcFile.delete();
             } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException
@@ -129,11 +140,15 @@ public class EncryptDecryptUtility {
                 cipher.init(Cipher.DECRYPT_MODE, secretKey);
                 fileIS = new FileInputStream(srcFile);
                 cIS = new CipherInputStream(fileIS, cipher);
-                byte[] inputBytes = new byte[(int) srcFile.length()];
-                cIS.read(inputBytes);
-                String s = new String(inputBytes, "UTF-8");
-                inputBytes = s.getBytes("UTF-8");
-                finalString = new String(inputBytes);
+                byte[] inputBytes = new byte[10];
+                int charRead;
+                while ((charRead = cIS.read(inputBytes)) > 0) {
+                    byte[] input2Bytes = Arrays.copyOf(inputBytes, charRead);
+                    String s = new String(input2Bytes, "UTF-8");
+                    input2Bytes = s.getBytes("UTF-8");
+                    String readString = new String(input2Bytes);
+                    finalString += readString;
+                }
             } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException
                     | IOException ex) {
                 ex.printStackTrace();

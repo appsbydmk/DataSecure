@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
+import com.appsbydmk.datasecure.helpers.EncryptDecryptUtility;
 import com.appsbydmk.datasecure.helpers.HelperConstants;
 import com.appsbydmk.datasecure.helpers.UserDetailsFileHelper;
 
@@ -26,9 +28,12 @@ public class UserDetailsActivity extends AppCompatActivity {
                 UserDetailsActivity.this.getUserDetails();
                 if (validateUserDetails(userName, password, passwordAgain)) {
                     if (UserDetailsFileHelper.writeUserDetails(UserDetailsActivity.this, userName, password)) {
+                        EncryptDecryptUtility.encrypt(UserDetailsActivity.this, HelperConstants.USER_DETAILS_FILE);
                         setResult(HelperConstants.USER_DETAILS_STATUS_CODE);
                         UserDetailsActivity.this.finish();
                     }
+                } else {
+                    Toast.makeText(UserDetailsActivity.this, "Please enter correct information!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

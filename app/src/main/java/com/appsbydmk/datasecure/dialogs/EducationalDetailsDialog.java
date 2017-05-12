@@ -48,7 +48,6 @@ public class EducationalDetailsDialog extends Dialog implements View.OnClickList
         btnCancel = (Button) this.findViewById(R.id.btn_cancel);
         btnSave.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
-
     }
 
     @Override
@@ -83,22 +82,22 @@ public class EducationalDetailsDialog extends Dialog implements View.OnClickList
         String graduationMarks = etGraduationMarks.getText().toString();
         if (!schoolName.equals("") && !schoolName.isEmpty()) {
             educationDetails.add("School Name: " + schoolName);
-        }
+        } else educationDetails.add("");
         if (!tenthMarks.equals("") && !tenthMarks.isEmpty()) {
             educationDetails.add("10th Marks: " + tenthMarks);
-        }
+        } else educationDetails.add("");
         if (!juniorCollegeName.equals("") && !juniorCollegeName.isEmpty()) {
             educationDetails.add("Junior College Name: " + juniorCollegeName);
-        }
+        } else educationDetails.add("");
         if (!diploma12thMarks.equals("") && !diploma12thMarks.isEmpty()) {
             educationDetails.add("12th or Diploma Marks: " + diploma12thMarks);
-        }
+        } else educationDetails.add("");
         if (!gradCollege.equals("") && !gradCollege.isEmpty()) {
             educationDetails.add("Graduation College:" + gradCollege);
-        }
+        } else educationDetails.add("");
         if (!graduationMarks.equals("") && !graduationMarks.isEmpty()) {
             educationDetails.add("Graduation Marks: " + graduationMarks);
-        }
+        } else educationDetails.add("");
         UserInformationHelper.writeEducationalDetails(myContext, educationDetails);
     }
 }

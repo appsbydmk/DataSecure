@@ -40,7 +40,6 @@ public class PersonalDetailsDialog extends Dialog implements View.OnClickListene
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_personal_details);
-        Toast.makeText(myContext, myContext.getFilesDir().toString(), Toast.LENGTH_SHORT).show();
         btnOk = (Button) this.findViewById(R.id.btn_save);
         btnCancel = (Button) this.findViewById(R.id.btn_cancel);
         etFullName = (EditText) this.findViewById(R.id.et_full_name);
@@ -83,11 +82,35 @@ public class PersonalDetailsDialog extends Dialog implements View.OnClickListene
 
     private void setPersonalDetails() {
         ArrayList<String> personalDetails = new ArrayList<>();
-        personalDetails.add("Full name: " + etFullName.getText().toString());
-        personalDetails.add("Date of Birth: " + etDob.getText().toString());
-        personalDetails.add("Gender: " + gender);
-        personalDetails.add("Aadhar Card No: " + etAadharNo.getText().toString());
-        personalDetails.add("Primary Email Address: " + etPrimaryEmail.getText().toString());
+        String fullName = etFullName.getText().toString();
+        String dob = etDob.getText().toString();
+        String aadhar = etAadharNo.getText().toString();
+        String pEmail = etPrimaryEmail.getText().toString();
+
+        if (fullName.equals("") || fullName.isEmpty())
+            personalDetails.add("");
+        else
+            personalDetails.add("Full name: " + etFullName.getText().toString());
+
+        if (dob.equals("") || dob.isEmpty())
+            personalDetails.add("");
+        else
+            personalDetails.add("Date of Birth: " + etDob.getText().toString());
+
+        if (gender == null || gender.equals("") || gender.isEmpty())
+            personalDetails.add("");
+        else
+            personalDetails.add("Gender: " + gender);
+
+        if (aadhar.equals("") || aadhar.isEmpty())
+            personalDetails.add("");
+        else
+            personalDetails.add("Aadhar Card No: " + etAadharNo.getText().toString());
+
+        if (pEmail.equals("") || pEmail.isEmpty())
+            personalDetails.add("");
+        else
+            personalDetails.add("Primary Email Address: " + etPrimaryEmail.getText().toString());
         UserInformationHelper.writePersonalDetails(myContext, personalDetails);
     }
 }

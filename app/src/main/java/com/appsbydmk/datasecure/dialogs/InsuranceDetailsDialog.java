@@ -74,10 +74,25 @@ public class InsuranceDetailsDialog extends Dialog implements View.OnClickListen
         String policyProvider = etpolicyProvider.getText().toString();
         String policyExpiryDate = etPolicyExpiryDate.getText().toString();
         String policyPremiumAmount = etInsurancePremium.getText().toString();
-        insuranceDetails.add("Insurance Policy Name: " + policyName);
-        insuranceDetails.add("Insurance Policy Provider: " + policyProvider);
-        insuranceDetails.add("Insurance Policy Expiry Date: " + policyExpiryDate);
-        insuranceDetails.add("Insurance Policy Premium Amount: " + policyPremiumAmount);
+        if (policyName.equals("") || policyName.isEmpty())
+            insuranceDetails.add("");
+        else
+            insuranceDetails.add("Insurance Policy Name: " + policyName);
+
+        if (policyProvider.equals("") || policyProvider.isEmpty())
+            insuranceDetails.add("");
+        else
+            insuranceDetails.add("Insurance Policy Provider: " + policyProvider);
+
+        if (policyExpiryDate.equals("") || policyExpiryDate.isEmpty())
+            insuranceDetails.add("");
+        else
+            insuranceDetails.add("Insurance Policy Expiry Date: " + policyExpiryDate);
+
+        if (policyPremiumAmount.equals("") || policyPremiumAmount.isEmpty())
+            insuranceDetails.add("");
+        else
+            insuranceDetails.add("Insurance Policy Premium Amount: " + policyPremiumAmount);
         UserInformationHelper.writeInsuranceDetails(myContext, insuranceDetails);
     }
 }

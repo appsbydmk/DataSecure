@@ -9,9 +9,9 @@ import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
@@ -24,12 +24,12 @@ import java.util.List;
 
 
 public class FinancialDetailsDialog extends Dialog implements View.OnClickListener {
-    private Spinner spBankAccountTypes;
     private ArrayAdapter<String> bankAccountsTypeAdapter;
     private Context myContext;
     private Button btnSave, btnCancel;
     private String accountType;
     private EditText etBankName, etBankAccNo, etBankBranchName;
+    private AutoCompleteTextView actAccType;
 
     public FinancialDetailsDialog(Context context) {
         super(context);
@@ -41,11 +41,12 @@ public class FinancialDetailsDialog extends Dialog implements View.OnClickListen
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_financial_details);
-        spBankAccountTypes = (Spinner) this.findViewById(R.id.sp_bank_acc_type);
+        String[] accTypes = myContext.getResources().getStringArray(R.array.bank_acc_types);
+        actAccType = (AutoCompleteTextView) this.findViewById(R.id.act_acc_type);
         bankAccountsTypeAdapter = new ArrayAdapter<>(getContext(),
-                android.R.layout.simple_spinner_dropdown_item,
-                myContext.getResources().getStringArray(R.array.bank_acc_types));
-        spBankAccountTypes.setAdapter(bankAccountsTypeAdapter);
+                android.R.layout.simple_dropdown_item_1line, accTypes);
+        actAccType.setThreshold(1);
+        actAccType.setAdapter(bankAccountsTypeAdapter);
         btnSave = (Button) this.findViewById(R.id.btn_save);
         btnCancel = (Button) this.findViewById(R.id.btn_cancel);
         etBankName = (EditText) this.findViewById(R.id.et_bank_name);
@@ -82,11 +83,26 @@ public class FinancialDetailsDialog extends Dialog implements View.OnClickListen
         String bankName = etBankName.getText().toString();
         String bankBranchName = etBankBranchName.getText().toString();
         String bankAccNo = etBankAccNo.getText().toString();
-        accountType = spBankAccountTypes.getSelectedItem().toString();
-        financialDetails.add("Bank Name: " + bankName);
-        financialDetails.add("Bank Branch Name: " + bankBranchName);
-        financialDetails.add("Bank Account No: " + bankAccNo);
-        financialDetails.add("Bank Account Type: " + accountType);
+        accountType = actAccType.getText().toString();
+        if (bankName.equals("") || bankName.isEmpty())
+            financialDetails.add("");
+        else
+            financialDetails.add("Bank Name: " + bankName);
+
+        if (bankBranchName.equals("") || bankBranchName.isEmpty())
+            financialDetails.add("");
+        else
+            financialDetails.add("Branch Name: " + bankBranchName);
+
+        if (bankAccNo.equals("") || bankAccNo.isEmpty())
+            financialDetails.add("");
+        else
+            financialDetails.add("Account No: " + bankAccNo);
+
+        if (accountType.equals("") || accountType.isEmpty())
+            financialDetails.add("");
+        else
+            financialDetails.add("Account Type: " + accountType);
         UserInformationHelper.writeFinancialDetails(myContext, financialDetails);
     }
 }

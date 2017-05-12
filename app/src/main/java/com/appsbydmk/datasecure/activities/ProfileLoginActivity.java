@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.appsbydmk.datasecure.R;
 import com.appsbydmk.datasecure.helpers.HelperConstants;
@@ -16,7 +17,6 @@ import java.util.ArrayList;
 public class ProfileLoginActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;
     private Button btnUserLogin;
-    private UserDetailsFileHelper userDetailsFileHelper;
     private ArrayList<String> userDetails;
 
     @Override
@@ -30,11 +30,13 @@ public class ProfileLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent profileIntent;
                 userDetails = UserDetailsFileHelper.getUserDetails(ProfileLoginActivity.this);
-                if (userDetails.get(0).toString().equals(etUsername.getText().toString())
-                        && userDetails.get(1).toString().equals(etPassword.getText().toString())) {
+                if (userDetails.get(0).equals(etUsername.getText().toString())
+                        && userDetails.get(1).equals(etPassword.getText().toString())) {
                     profileIntent = new Intent(ProfileLoginActivity.this, ProfileActivity.class);
                     ProfileLoginActivity.this.startActivityForResult(profileIntent,
                             HelperConstants.PROFILE_LOGOUT_CODE);
+                } else {
+                    Toast.makeText(ProfileLoginActivity.this, "Wrong username/password!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

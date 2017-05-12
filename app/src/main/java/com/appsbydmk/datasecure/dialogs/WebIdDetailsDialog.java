@@ -75,11 +75,27 @@ public class WebIdDetailsDialog extends Dialog implements View.OnClickListener {
         String twitter = etTwitterId.getText().toString();
         String snapchat = etSnapchatId.getText().toString();
         String instagram = etInstagramId.getText().toString();
-        webDetails.add("Secondary Email Address: " + secondaryEmailAddress);
-        webDetails.add("Facebook: " + facebook);
-        webDetails.add("Twitter: " + twitter);
-        webDetails.add("Snapchat: " + snapchat);
-        webDetails.add("Instagram: " + instagram);
+        if (secondaryEmailAddress.equals("") || secondaryEmailAddress.isEmpty())
+            webDetails.add("");
+        else
+            webDetails.add("Secondary Email Address: " + secondaryEmailAddress);
+        if (facebook.equals("") || facebook.isEmpty())
+            webDetails.add("");
+        else
+            webDetails.add("Facebook: " + facebook);
+        if (twitter.equals("") || twitter.isEmpty())
+            webDetails.add("");
+        else
+            webDetails.add("Twitter: " + twitter);
+
+        if (snapchat.equals("") || snapchat.isEmpty())
+            webDetails.add("");
+        else
+            webDetails.add("Snapchat: " + snapchat);
+        if (instagram.equals("") || instagram.isEmpty())
+            webDetails.add("");
+        else
+            webDetails.add("Instagram: " + instagram);
         UserInformationHelper.writeWebDetails(myContext, webDetails);
     }
 }

@@ -12,6 +12,7 @@ import com.appsbydmk.datasecure.dialogs.EducationalDetailsDialog;
 import com.appsbydmk.datasecure.dialogs.FinancialDetailsDialog;
 import com.appsbydmk.datasecure.dialogs.InsuranceDetailsDialog;
 import com.appsbydmk.datasecure.dialogs.PersonalDetailsDialog;
+import com.appsbydmk.datasecure.dialogs.UserDetailsChangeDialog;
 import com.appsbydmk.datasecure.dialogs.WebIdDetailsDialog;
 
 public class InfoActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -53,6 +54,10 @@ public class InfoActivity extends AppCompatActivity implements AdapterView.OnIte
             case 4:
                 EducationalDetailsDialog educationalDetailsDialog = new EducationalDetailsDialog(this);
                 educationalDetailsDialog.show();
+                break;
+            case 5:
+                UserDetailsChangeDialog userDetailsChangeDialog = new UserDetailsChangeDialog(this);
+                userDetailsChangeDialog.show();
                 break;
             default:
                 break;
