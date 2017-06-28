@@ -15,7 +15,7 @@ import com.appsbydmk.datasecure.helpers.UserDetailsFileHelper;
 import java.util.ArrayList;
 
 public class ProfileLoginActivity extends AppCompatActivity {
-    private EditText etUsername, etPassword;
+    private EditText etPassword;
     private Button btnUserLogin;
     private ArrayList<String> userDetails;
 
@@ -30,20 +30,18 @@ public class ProfileLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent profileIntent;
                 userDetails = UserDetailsFileHelper.getUserDetails(ProfileLoginActivity.this);
-                if (userDetails.get(0).equals(etUsername.getText().toString())
-                        && userDetails.get(1).equals(etPassword.getText().toString())) {
+                if (userDetails.get(1).equals(etPassword.getText().toString())) {
                     profileIntent = new Intent(ProfileLoginActivity.this, ProfileActivity.class);
                     ProfileLoginActivity.this.startActivityForResult(profileIntent,
                             HelperConstants.PROFILE_LOGOUT_CODE);
                 } else {
-                    Toast.makeText(ProfileLoginActivity.this, "Wrong username/password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileLoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
     private void bindViews() {
-        etUsername = (EditText) this.findViewById(R.id.et_uname_login);
         etPassword = (EditText) this.findViewById(R.id.et_pwd_login);
         btnUserLogin = (Button) this.findViewById(R.id.btn_login);
     }
